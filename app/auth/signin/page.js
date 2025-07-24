@@ -18,7 +18,7 @@ export default function SignIn () {
                     </button>
                 </form >
                 <p className="text-gray-600 text-xs">By clicking on the signin button, you confirm that you have agreed with our {""}
-                    <Link href="#" className="text-gray-800 underline"> Terms of use</L~ink>{""} and {""} 
+                    <Link href="#" className="text-gray-800 underline"> Terms of use</Link>{""} and {""} 
                     <Link href="#" className="text-gray-800 underline"> privacy policy</Link>             
                      </p>
             </div>
