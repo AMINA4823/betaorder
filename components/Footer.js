@@ -4,7 +4,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
-export default function footer(){
+export default function Footer(){
     const year = new Date().getFullYear()
     return (
         <footer className=" grid grid-cols-1 md:px-8 md:grid-cols lg:grid-cols-3 lg:py-4 lg:px-5 lg:gap-0 lg:bg-black">

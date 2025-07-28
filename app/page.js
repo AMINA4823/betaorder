@@ -3,7 +3,7 @@ export default function Home() {
   return (
         <main>
            <div class="w-[100%] h-[60px] bg-white-200 border-y border-gray-500 flex justify-between py-3 px-4 sticky">
-    <h1 className="text-2xl font-bold  text-pink-500"> Amimiluxe</h1>
+    <h1 className="text-2xl font-bold  text-pink-500"> STARBUCKS</h1>
     <div className="font-bold flex gap-10 text-2xl text-white">
       <p className="hover: text-pink-800">HOME</p>
       <p className="hover: text-pink-800">MENU</p>

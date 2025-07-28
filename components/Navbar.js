@@ -5,19 +5,25 @@ import { FaGripLines } from "react-icons/fa";
  
 
 export default function Navbar(){
+const [menuOpen,setMenuOpen] = useState(false)
+
+        const toggleMenu = () =>{
+            setMenuOpen(!menuOpen)
+        }      
+  
     return(
         <main className="bg-white shadow shadow-gray-300 w-full"> 
         <div className="flex justify-between h-[50px] pt-3 px-5">
             <p className="text- blue-500 font-bold text-2xl">BetaOrder</p>
             <ul className="hidden md:flex gap-10 font-semibold cursor-pointer">
-                 <li><link href="#">Add-order</link></li>
-                 <li><link href="#">orders</link></li>
-                 <li><link href="#">profile</link></li>
+                 <li><Link href="#">Add-order</Link></li>
+                 <li><Link href="#">orders</Link></li>
+                 <li><Link href="#">profile</Link></li>
             </ul>
-            <link href="#"><p className="hidden md:block h-[30px] w-[80px] bg-blue-400 text-white text-center rounded-lg">SignUp</p>
-            </link>
+            <Link href="#"><p className="hidden md:block h-[30px] w-[80px] bg-blue-400 text-white text-center rounded-lg">SignUp</p>
+            </Link>
             <div className="block py-2 md:hidden">
-                <LiaGripLinesSolid className="text-2xl text-blue-500"
+                <FaGripLines className="text-2xl text-blue-500"
                 onClick={toggleMenu} />
           </div> 
          </div>

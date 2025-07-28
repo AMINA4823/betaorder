@@ -1,5 +1,7 @@
+import { signIn } from "@/auth";
 import Link from "next/link";
 import { FaGoogle } from "react-icons/fa";
+
 
 
 export default function SignIn () {
@@ -9,7 +11,12 @@ export default function SignIn () {
          <div className="w-full md:w-[30em] rounded-md bg-white p-4">   
           <h1 className="text-2xl mb-2">Sign into BetaOrder</h1>
           <p>sign in using...</p>
-             <form className="mb-2 ">
+             <form 
+             action={async()=>{
+              "use server"
+               await signIn("google")
+             }}
+             className="mb-2 ">
               <button className="w-full h-[3.3em] bg-black border-b-2 border-blue-500 rounded-md flex justify-center items-center gap-2">
                 <FaGoogle className="text-3xl text-white" />
                 <span className="text-white text-lg">Google Account</span>
