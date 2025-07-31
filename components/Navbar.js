@@ -16,11 +16,11 @@ const [menuOpen,setMenuOpen] = useState(false)
         <div className="flex justify-between h-[50px] pt-3 px-5">
             <p className="text- blue-500 font-bold text-2xl">BetaOrder</p>
             <ul className="hidden md:flex gap-10 font-semibold cursor-pointer">
-                 <li><Link href="#">Add-order</Link></li>
-                 <li><Link href="#">orders</Link></li>
-                 <li><Link href="#">profile</Link></li>
+                 <li><Link href="/dashboard/add-order">Add-order</Link></li>
+                 <li><Link href="/dashboard/orders">orders</Link></li>
+                 <li><Link href="/dashboard/profile">profile</Link></li>
             </ul>
-            <Link href="#"><p className="hidden md:block h-[30px] w-[80px] bg-blue-400 text-white text-center rounded-lg">SignUp</p>
+            <Link href="/auth/signin"><p className="hidden md:block h-[30px] w-[80px] bg-blue-400 text-white text-center rounded-lg">SignUp</p>
             </Link>
             <div className="block py-2 md:hidden">
                 <FaGripLines className="text-2xl text-blue-500"
@@ -30,12 +30,12 @@ const [menuOpen,setMenuOpen] = useState(false)
  {menuOpen &&(
     <div className="px-5 pb-1 md:hidden">
         <ul>
-            <li><link href="#">Add-order</link></li>
-             <li><link href="#">order-list</link></li>
-            <li><link href="#">profile</link></li>
+            <li><link href="/dashboard/add-order">Add-order</link></li>
+             <li><link href="/dashboard/orders">order-list</link></li>
+            <li><link href="/dashboard/profile">profile</link></li>
 
         </ul>
-        <Link href="#"><p className="h-[30px] w-[80px] bg-blue-400 text-white text-center rounded-lg
+        <Link href="/auth/signin"><p className="h-[30px] w-[80px] bg-blue-400 text-white text-center rounded-lg
          md:hidden">SignUp</p>
         </Link>
 

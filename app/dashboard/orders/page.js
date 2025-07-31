@@ -1,4 +1,4 @@
-import { CardHeader } from "@mui/material";
+import { Card, CardHeader } from "@mui/material";
 
 export default function Orders () {
     return( 

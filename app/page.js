@@ -2,7 +2,7 @@
 export default function Home() {
   return (
         <main>
-           <div class="w-[100%] h-[60px] bg-white-200 border-y border-gray-500 flex justify-between py-3 px-4 sticky">
+           <div className="w-[100%] h-[60px] bg-white-200 border-y border-gray-500 flex justify-between py-3 px-4 sticky">
     <h1 className="text-2xl font-bold  text-pink-500"> STARBUCKS</h1>
     <div className="font-bold flex gap-10 text-2xl text-white">
       <p className="hover: text-pink-800">HOME</p>
@@ -15,8 +15,8 @@ export default function Home() {
      <div>
  <div className="px-15 py-40">
  <h1 className="text-black text-2xl font-bold">Just in </h1>
- <p className="text-black text-6xl font-bold"> OUR MAYYA TWO PIECES </p>
- <p className="text-black text-2xl mt-4">DESIGN AND MADE TO ELEVATE SENSE OF FASHION  </p>
+ <p className="text-black text-6xl font-bold"> OUR SPECIAL STRAWBERRY MATCHA</p>
+ <p className="text-black text-2xl mt-4">MADE TO TANGLE YOUR TASTE BUDSG </p>
  <div className="w-[150px] h-[60px] rounded-full bg-white flex gap-2 justify-center items-center border border-white hover:bg-pink-700 tex-pink-700 text-sm hover:text-white mt-5">
    <p className="">SHOP NOW</p>
    </div> 
