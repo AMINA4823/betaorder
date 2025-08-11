@@ -5,7 +5,7 @@ import { FaGoogle } from "react-icons/fa";
 
 
 
-export default async function SignIn () {
+export default  async function SignIn () {
   const  session = await auth ();
   console.log(session)
     return ( 
