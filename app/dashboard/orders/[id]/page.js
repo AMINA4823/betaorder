@@ -4,7 +4,7 @@ import { db } from "@/config/firebase.config"
 import { TimeStampToDate } from "@/utlis/timestamp-date";
 import { deleteDoc, doc, getDoc } from "firebase/firestore"
 import Image from"next/image";
-import { notFound, useParams, useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 

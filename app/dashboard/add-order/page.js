@@ -27,24 +27,25 @@ export default function AddOrders ({userId}) {
             notes:""
         },
         onSubmit: async (values,{resetForm}) =>{
+            setOpProgess(true);
          await addDoc(collection(db,"orders"),{
             user:session?. user?.id,
-        customername:values.customername,
-        order:values.order,
-        amount:values.amount,
-        notes:values.notes,
-        timecreated: new Date().getTime(),
-             }).then(()=>{
+            customername:values.customername,
+            order:values.order,
+            amount:values.amount,
+            notes:values.notes,
+            timecreated: new Date().getTime(),
+         }).then(()=>{
                 setOpProgess(false)
                 alert("You just made an order")
                 resetForm();
-             } )
-             .catch(e =>{
+         })
+        .catch(e =>{
                 setOpProgess(false)
                 console.error(e)
                 alert("your order was not sucessful")
 
-             })
+         })
         
 
         },
@@ -112,7 +113,7 @@ export default function AddOrders ({userId}) {
                             {errors.notes}  </span>: null}
                     </div>
                     <div className="flex items-center gap">
-                    <Button  type="submit" variant="contained" className="rounded">PLACE ORDER</Button>
+                    <Button  type="submit" variant="contained" className="rounded w-full ">PLACE ORDER</Button>
                     <CircularProgress style={{display:!opProgess ? "none" : "flex"}}/>
                     </div>
                 </form>
