@@ -1,75 +1,15 @@
-"use client"
-import { db } from "@/config/firebase.config";
-import { TimeStampToDate } from "@/utlis/timestamp-date";
-import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
-import { useSession } from "next-auth/react";
-import Image from "next/image"
-import Link from "next/link";
-import React from "react";
-import { RiDeleteBin5Line } from "react-icons/ri";
+import { auth } from "@/auth"
+import { Authorizationcheck } from "@/config/autthorization-check"
+import Orders from "./orders"
 
 
+export default  async function page () {
+    const session = await auth();
 
-
-
-export default function Orders () {
-  const [orders,setorders] = React.useState([]);
-  const {data: session} = useSession();
-
-
-   React.useEffect(()=>{
-     const fetchorders = async() =>{
-      try{
-        const q = query(collection(db, "orders"));
-        const onsnap = await getDocs (q,
-          where("user", "===", session?.user?.id),
-          orderBy("timecreated","desc")
-        )
-        //send the fetched data into array
-        const compileOrders =[];
-        onsnap.docs.forEach(doc =>{
-           compileOrders.push({
-            id:doc.id,
-            data: doc.data(),
-           })
-        })
-        setorders(compileOrders);
-        console.log(compileOrders)
-      } catch(error) { 
-        console.error("An error occured while fetching orders:",error )
-      }
-     }
-     if (session) {
-         fetchorders();
-       };
-   },[session])
-    return( 
-        <main className="min-h-dvh p-4 bg-gray-50">
-          <h1 className="text-center font-bold text-blue-400">My orders</h1>
-          <p className="text-center text-gray-500 text-sm mb-6"> Collections Of All The Orders Placed</p>
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-12 px-8">
-         {orders.map(orders=> <Link href={`/dashboard/orders/${orders.id}`} key={orders.id}>
-          <div className="w-[300px] h-[480px] bg-white rounded-xl shadow-md hover:shadow-lg transition -shadow ">
-            <Image
-            src="/chips.jpeg"
-            alt="chips"
-            width={300}
-            height={300}
-            className="rounded-t-xl"
-            />
-            <div className="p-3">
-              <span className="block text-2xl font-semi-bold text-gray-800">{orders.data.customername}</span>
-              <span className="block font-bold text-gray-800">{orders.data.order}</span>
-              <span className="block  font-semi-bold text-gray-800">₦{orders.data.amount}</span>
-               <span className="block  font-bold text-gray-500">{TimeStampToDate(orders.data.timecreated)}</span>
-              <span className="block  text-sm font-semi-bold text-gray-900">{orders.data.notes}</span>
-              </div>
-             
-           </div>
-           </Link>
-           )}
-
-        </div>
-        </main>
-    )
-}
+  return (
+    <> 
+    <Authorizationcheck/>
+    <Orders userId={session?.user?.id}/>
+    </>
+  )
+} 
